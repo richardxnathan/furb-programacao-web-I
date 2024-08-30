@@ -1,0 +1,75 @@
+header {
+    background-color: aquamarine;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+}
+
+nav {
+    background-color: peachpuff;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border: 1px solid black;
+}
+
+menu {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+body {
+    margin: 0px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+main {
+    margin-left: 10px;
+}
+
+footer {
+    background-color: skyblue;
+    margin-top: 8px;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 0.75em;
+}
+
+.classe{
+    background-color: lime;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#arquivo {
+    background-color: yellow;
+}
+
+ul li {
+    font-style: italic;
+}
+
+.classeDiv > p{
+    background-color: lightseagreen;
+}
+
+.classeDiv + p{
+    background-color: lightseagreen;
+}
+
+.classeDiv ~ section{
+    text-align: center;
+}
+
+.botao {
+    background-color: gray;
+    border-radius: 50px;
+    color: black;
+    font-weight: bold;
+    padding: 5px;
+    text-decoration: none;
+}
+
+.botao:hover {
+    background-color: black;
+    color: white
+}
