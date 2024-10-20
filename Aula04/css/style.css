@@ -1,0 +1,126 @@
+@font-face {
+    font-family: fonteRodape;
+    src: url(../fonts/Sevillana-Regular.ttf);
+}
+
+header {
+    background-color: aquamarine;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    position: sticky;
+    top: 0px;
+    z-index: 1;
+    font-family: "Matemasie", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+}
+
+.matemasie-regular {
+    font-family: "Matemasie", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+
+nav {
+    background-color: peachpuff;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border: 1px solid black;
+}
+
+nav li {
+    list-style: none;
+    display: inline-block;
+}
+
+nav a {
+    color: blue;
+    text-decoration: none;
+}
+
+nav a :hover {
+    text-decoration: underline;
+}
+
+.menuPrincipal > li {
+    display: inline-block;
+}
+
+.subMenu {
+    position: fixed;
+    background-color: blanchedalmond;
+}
+
+.subMenu li {
+    padding: 10px;
+}
+
+menu {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+body {
+    margin: 0px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+main {
+    margin-bottom: 30px;
+    margin-left: 10px;
+}
+
+footer {
+    background-color: skyblue;
+    margin-top: 8px;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 0.75em;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    font-family: fonteRodape;
+}
+
+.classe{
+    background-color: lime;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#arquivo {
+    background-color: yellow;
+}
+
+ul li {
+    font-style: italic;
+}
+
+.classeDiv > p{
+    background-color: lightseagreen;
+}
+
+.classeDiv + p{
+    background-color: lightseagreen;
+}
+
+.classeDiv ~ section{
+    text-align: center;
+}
+
+.botao {
+    background-color: gray;
+    border-radius: 50px;
+    color: black;
+    font-weight: bold;
+    padding: 5px;
+    text-decoration: none;
+}
+
+.botao:hover {
+    background-color: black;
+    color: white
+}

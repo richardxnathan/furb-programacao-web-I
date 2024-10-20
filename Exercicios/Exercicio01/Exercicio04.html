@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 04</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: gray;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        li {
+            margin: 5px 0;
+            cursor: pointer;
+        }
+
+
+        .hover-div {
+            width: 200px;
+            height: 100px;
+            background-color: lightblue;
+            text-align: center;
+            line-height: 100px;
+            margin-bottom: 20px;
+        }
+
+        .hover-div:hover {
+            background-color: lightgreen;
+        }
+
+        table, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        td {
+            width: 100px;
+            height: 50px;
+            text-align: center;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Exercicio 04</h1>
+
+    <ul id="comidas-list">
+        <li>Pizza</li>
+        <li>Hambúrguer</li>
+        <li>Sushi</li>
+        <li>Lasanha</li>
+        <li>Burrito</li>
+    </ul>
+
+    <h2>Hover</h2>
+    <div class="hover-div">Passe o mouse aqui</div>
+
+    <h2>Background</h2>
+    <table>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+
+    <script>
+        const comidas = document.querySelectorAll('#comidas-list li');
+        comidas.forEach(comida => {
+            comida.addEventListener('click', () => {
+                alert('Você clicou em: ' + comida.textContent);
+            });
+        });
+
+        const cells = document.querySelectorAll('table td');
+        cells.forEach(cell => {
+            cell.addEventListener('click', () => {
+                cell.style.backgroundColor = 'red';
+            });
+        });
+    </script>
+</body>
+
+</html>

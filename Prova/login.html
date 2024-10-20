@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Ferrari</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <a href="index.html">
+                <img src="images/logo.png" alt="Logo Ferrari" class="logo">
+            </a>
+            <h1>Ferrari</h1>
+            <div class="user-section">
+                <a href="#">
+                    <img src="images/user.png" alt="Login" class="user-icon">
+                </a>
+                <a href="#" class="user-status">Usuário não autenticado</a>
+            </div>
+        </nav>
+    </header>
+
+    <nav class="menu-horizontal">
+        <ul>
+            <li><a href="#">Corridas</a>
+                <ul class="dropdown">
+                    <li><a href="#">Formula 1</a></li>
+                    <li><a href="#">Endurance</a></li>
+                    <li><a href="#">Esportes</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Carros Esportivos</a></li>
+            <li><a href="#">Coleções</a></li>
+            <li><a href="#">Experiência</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+    </nav>
+
+    <div class="login-container">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="username">Login:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Senha:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit">Autenticar</button>
+        </form>
+    </div>
+
+    <footer>
+        <p>Richard Nathan Domingos</p>
+    </footer>
+
+</body>
+
+</html>
