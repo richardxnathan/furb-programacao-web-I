@@ -1,0 +1,56 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 120vh;
+    background-color: gray;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    text-align: center;
+}
+
+table {
+    margin: 20px auto;
+    border-collapse: collapse;
+}
+
+td {
+    width: 100px;
+    height: 100px;
+    border: 2px solid black;
+    text-align: center;
+    font-size: 24px;
+}
+
+.correto {
+    background-color: #27AE60;
+    color: white;
+}
+
+.incorreto {
+    background-color: #E74C3C;
+    color: white;
+}
+
+.posicaoErrada {
+    background-color: #FFDA44;
+    color: black;
+}
+
+#reiniciar {
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+#reiniciar:hover {
+    background-color: darkgray;
+}
