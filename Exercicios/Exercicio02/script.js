@@ -1,15 +1,14 @@
-
 const palavras = [
     "ARRAY", "CACHE", "CLOUD", "CODAR", "DEBUG", "DIGIT", "EMAIL", "FIBRA",
     "FRAME", "GITAR", "HACKS", "HTTPS", "INPUT", "LOGAR", "LOGIN", "LOGON",
     "LOOPS", "MACRO", "MOUSE", "NODES", "NUBES", "PATCH", "PIXEL", "PLUGS",
     "PROXY", "QUERY", "RAMAL", "ROUTE", "SHELL", "STACK", "SWIFT", "TABLE",
     "TOKEN", "TOOLS", "USUAR", "VIRUS", "VISTA", "VPNAS", "WEARS", "WIFIS",
-    "ZONAR", "LINUX", "CIBER", "INODE", "DEBUG", "LINUX", "CIBER", "INODE"
+    "ZONAR", "LINUX", "CIBER", "INODE"
 ];
 
 let palavraEscolhida = escolherPalavra();
-let tentativas = 0;
+let jogoFinalizado = false;
 
 function escolherPalavra() {
     const indice = Math.floor(Math.random() * palavras.length);
@@ -18,16 +17,17 @@ function escolherPalavra() {
 
 document.getElementById("form-palavra").addEventListener("submit", function (event) {
     event.preventDefault();
+    
+    if (jogoFinalizado) {
+        alert("O jogo já foi finalizado! Reinicie para jogar novamente.");
+        return;
+    }
+    
     const palavraDigitada = document.getElementById("palavra").value.toUpperCase();
 
     if (palavraDigitada.length === 5) {
-        if (tentativas < 6) {
-            preencherTabela(palavraDigitada);
-            verificarPalavra(palavraDigitada);
-            tentativas++;
-        } else {
-            alert("Você já usou todas as tentativas!");
-        }
+        preencherTabela(palavraDigitada);
+        verificarPalavra(palavraDigitada);
     } else {
         alert("A palavra deve ter 5 letras.");
     }
@@ -35,10 +35,22 @@ document.getElementById("form-palavra").addEventListener("submit", function (eve
     document.getElementById("palavra").value = "";
 });
 
+function adicionarLinhaTabela() {
+    const tabela = document.querySelector("table");
+    const novaLinha = document.createElement("tr");
+
+    for (let i = 0; i < 5; i++) {
+        const novaCelula = document.createElement("td");
+        novaLinha.appendChild(novaCelula);
+    }
+
+    tabela.appendChild(novaLinha);
+}
+
 function preencherTabela(palavra) {
     const tabela = document.querySelector("table");
     const linhas = tabela.querySelectorAll("tr");
-    const celulas = linhas[tentativas].querySelectorAll("td");
+    const celulas = linhas[linhas.length - 1].querySelectorAll("td");
 
     for (let i = 0; i < 5; i++) {
         celulas[i].textContent = palavra[i];
@@ -49,7 +61,7 @@ function verificarPalavra(palavra) {
     let palavraCorreta = true;
     const tabela = document.querySelector("table");
     const linhas = tabela.querySelectorAll("tr");
-    const celulas = linhas[tentativas].querySelectorAll("td");
+    const celulas = linhas[linhas.length - 1].querySelectorAll("td");
 
     for (let i = 0; i < 5; i++) {
         if (palavra[i] === palavraEscolhida[i]) {
@@ -65,16 +77,15 @@ function verificarPalavra(palavra) {
 
     if (palavraCorreta) {
         alert(`Você acertou! A palavra é: ${palavraEscolhida}`);
-    }
-
-    if (tentativas >= 5 && !palavraCorreta) {
-        alert(`Você perdeu! A palavra era: ${palavraEscolhida}`);
+        jogoFinalizado = true;
+    } else {
+        adicionarLinhaTabela();
     }
 }
 
 document.getElementById("reiniciar").addEventListener("click", function () {
     palavraEscolhida = escolherPalavra();
-    tentativas = 0;
+    jogoFinalizado = false;
     const tabela = document.querySelector("table");
-    tabela.innerHTML = "<tr><td></td><td></td><td></td><td></td><td></td></tr>".repeat(6);
+    tabela.innerHTML = "<tr><td></td><td></td><td></td><td></td><td></td></tr>";
 });
