@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário - Ferrari</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <a href="index.html">
+                <img src="images/logo.png" alt="Logo Ferrari" class="logo">
+            </a>
+            <h1>Ferrari</h1>
+            <div class="user-section">
+                <a href="form.html">
+                    <img src="images/login.jpg" alt="Login" class="user-icon">
+                </a>
+                <a href="login.html" class="user-status">Usuário não autenticado</a>
+            </div>
+        </nav>
+    </header>
+
+    <nav class="menu-horizontal">
+        <ul>
+            <li><a href="#">Corridas</a>
+                <ul class="dropdown">
+                    <li><a href="#">Formula 1</a></li>
+                    <li><a href="#">Endurance</a></li>
+                    <li><a href="#">Esportes</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Carros Esportivos</a></li>
+            <li><a href="#">Coleções</a></li>
+            <li><a href="#">Cadastro</a>
+                <ul class="dropdown">
+                    <li><a href="cadastro.html">Cadastro Geral</a></li>
+                    <li><a href="crud.html">Cadastro Especifico</a></li>
+                </ul>
+            </li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+    </nav>
+
+    <section class="content">
+        <div class="form-container">
+            <h2>Preencha o Formulário</h2>
+            <form id="formFerrari" action="submit-form.php" method="POST">
+                <div class="form-group">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="data">Data de Nascimento:</label>
+                    <input type="date" id="data" name="data" required>
+                </div>
+
+                <div class="form-group genero">
+                    <label for="genero">Gênero:</label>
+                    <input type="radio" id="masculino" name="genero" value="Masculino">
+                    <label for="masculino">Masculino</label>
+                    <input type="radio" id="feminino" name="genero" value="Feminino">
+                    <label for="feminino">Feminino</label>
+                </div>
+
+                <div class="form-group interesse">
+                    <label>Interesse:</label>
+                    <input type="checkbox" id="corridas" name="interesse" value="Corridas">
+                    <label for="corridas">Corridas</label>
+                    <input type="checkbox" id="esportivos" name="interesse" value="Esportivos">
+                    <label for="esportivos">Esportivos</label>
+                    <input type="checkbox" id="colecoes" name="interesse" value="Coleções">
+                    <label for="colecoes">Coleções</label>
+                </div>
+
+                <div class="form-group preferencia">
+                    <label for="preferencia">Preferência de Layout:</label>
+                    <select id="preferencia" name="preferencia">
+                        <option value="default">Default</option>
+                        <option value="custom">Custom</option>
+                    </select>
+                </div>
+
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>Richard Nathan Domingos</p>
+    </footer>
+
+</body>
+
+</html>
